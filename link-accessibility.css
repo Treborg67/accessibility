@@ -1,3 +1,7 @@
+.external-link {
+  position: relative; /* anchor tooltip to the link */
+}
+
 .external-link::after {
   content: "↗";
   margin-left: 0.25em;
@@ -7,23 +11,31 @@
 .external-link:hover::before {
   content: "Opens in new tab";
   position: absolute;
+  top: -1.5em; /* show above the link */
+  left: 0;
   background: #333;
   color: #fff;
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 0.75em;
-  transform: translateY(-150%);
+  white-space: nowrap;
+}
+
+.internal-link {
+  position: relative; /* anchor tooltip to the link */
 }
 
 .internal-link:hover::before {
   content: attr(data-title);
   position: absolute;
+  top: -1.5em; /* show above the link */
+  left: 0;
   background: #555;
   color: #fff;
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 0.75em;
-  transform: translateY(-150%);
+  white-space: nowrap;
 }
 
 .sr-only {
