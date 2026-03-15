@@ -8,33 +8,30 @@
 
     if (isExternal) {
       link.classList.add('external-link');
+      link.setAttribute('rel', 'noopener');
+      link.setAttribute('target', '_blank');
+      link.setAttribute('aria-label', link.textContent + ', opens in new tab or window');
+
+      const icon = document.createElement('i');
+      icon.className = 'fa-solid fa-arrow-up-right-from-square';
+      icon.setAttribute('aria-hidden', 'true');
+      link.appendChild(icon);
 
       const srText = document.createElement('span');
       srText.className = 'sr-only';
-      srText.textContent = '(opens in new tab)';
+      srText.textContent = '(opens in new tab or window)';
       link.appendChild(srText);
-
-      if (!link.hasAttribute('rel')) link.setAttribute('rel', 'noopener');
-      if (!link.hasAttribute('target')) link.setAttribute('target', '_blank');
     } else {
       link.classList.add('internal-link');
+      const pageTitle = url.pathname;
+      link.setAttribute('aria-label', link.textContent + ', navigates to ' + pageTitle);
 
-      fetch(url.href)
-        .then(response => response.text())
-        .then(html => {
-          const doc = new DOMParser().parseFromString(html, "text/html");
-          const pageTitle = doc.querySelector("title")?.innerText || url.pathname;
+      const srText = document.createElement('span');
+      srText.className = 'sr-only';
+      srText.textContent = `(navigates to ${pageTitle})`;
+      link.appendChild(srText);
 
-          const srText = document.createElement('span');
-          srText.className = 'sr-only';
-          srText.textContent = `(navigates to ${pageTitle})`;
-          link.appendChild(srText);
-
-          link.setAttribute('data-title', pageTitle);
-        })
-        .catch(() => {
-          link.setAttribute('data-title', url.pathname);
-        });
+      link.setAttribute('data-title', pageTitle);
     }
   });
 })();

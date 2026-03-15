@@ -1,19 +1,13 @@
 .external-link,
 .internal-link {
-  position: relative; /* anchor tooltip to the link */
-  display: inline-block; /* ensures tooltip aligns with the link */
-}
-
-.external-link::after {
-  content: "↗";
-  margin-left: 0.25em;
-  font-size: 0.8em;
+  position: relative;
+  display: inline-block;
 }
 
 .external-link:hover::before {
   content: "Opens in new tab or window";
   position: absolute;
-  bottom: 100%; /* show above the link */
+  bottom: 100%;
   left: 0;
   background: #333;
   color: #fff;
@@ -26,7 +20,7 @@
 .internal-link:hover::before {
   content: attr(data-title);
   position: absolute;
-  bottom: 100%; /* show above the link */
+  bottom: 100%;
   left: 0;
   background: #555;
   color: #fff;
