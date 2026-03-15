@@ -7,7 +7,7 @@
 .external-link:hover::before {
   content: "Opens in new tab or window";
   position: absolute;
-  bottom: 100%;
+  top: -1.8em;   /* place above the link */
   left: 0;
   background: #333;
   color: #fff;
@@ -20,7 +20,7 @@
 .internal-link:hover::before {
   content: attr(data-title);
   position: absolute;
-  bottom: 100%;
+  top: -1.8em;   /* place above the link */
   left: 0;
   background: #555;
   color: #fff;
@@ -28,15 +28,4 @@
   border-radius: 4px;
   font-size: 0.75em;
   white-space: nowrap;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
 }
