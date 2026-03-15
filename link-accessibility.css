@@ -1,13 +1,13 @@
 .external-link,
 .internal-link {
-  position: relative;   /* anchor tooltips to the link */
+  position: relative;   /* anchor tooltip to link */
   display: inline-block;
 }
 
 .external-link:hover::before {
   content: "Opens in new tab or window";
   position: absolute;
-  top: -30px;           /* move tooltip above link */
+  top: -1.8em;          /* place above link */
   left: 0;
   background: #333;
   color: #fff;
@@ -15,13 +15,13 @@
   border-radius: 4px;
   font-size: 0.75em;
   white-space: nowrap;
-  z-index: 1000;        /* ensure tooltip is visible */
+  z-index: 9999;        /* force tooltip above everything */
 }
 
 .internal-link:hover::before {
   content: attr(data-title);
   position: absolute;
-  top: -30px;           /* move tooltip above link */
+  top: -1.8em;          /* place above link */
   left: 0;
   background: #555;
   color: #fff;
@@ -29,5 +29,5 @@
   border-radius: 4px;
   font-size: 0.75em;
   white-space: nowrap;
-  z-index: 1000;        /* ensure tooltip is visible */
+  z-index: 9999;        /* force tooltip above everything */
 }
