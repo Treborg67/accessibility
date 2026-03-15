@@ -1,5 +1,7 @@
-.external-link {
+.external-link,
+.internal-link {
   position: relative; /* anchor tooltip to the link */
+  display: inline-block; /* ensures tooltip aligns with the link */
 }
 
 .external-link::after {
@@ -9,9 +11,9 @@
 }
 
 .external-link:hover::before {
-  content: "Opens in new tab";
+  content: "Opens in new tab or window";
   position: absolute;
-  top: -1.5em; /* show above the link */
+  bottom: 100%; /* show above the link */
   left: 0;
   background: #333;
   color: #fff;
@@ -21,14 +23,10 @@
   white-space: nowrap;
 }
 
-.internal-link {
-  position: relative; /* anchor tooltip to the link */
-}
-
 .internal-link:hover::before {
   content: attr(data-title);
   position: absolute;
-  top: -1.5em; /* show above the link */
+  bottom: 100%; /* show above the link */
   left: 0;
   background: #555;
   color: #fff;
