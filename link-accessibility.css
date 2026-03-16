@@ -1,19 +1,26 @@
+/* External link icon spacing and styling */
 .external-link i {
-  margin-left: 6px;
-  font-size: 0.9em;
-  color: #555;
+  margin-left: 0.5em;   /* about 2 spaces worth */
+  font-size: 0.9em;     /* slightly smaller than text */
+  color: inherit;       /* matches the site’s font color */
+  vertical-align: middle;
 }
 
-a[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  background: #333;
-  color: #fff;
-  padding: 4px 6px;
-  border-radius: 4px;
-  top: 100%;
-  left: 0;
-  white-space: nowrap;
-  font-size: 0.8em;
-  margin-top: 4px;
+/* Use a clean, accessible font */
+body, a {
+  font-family: "Arial", "Helvetica", sans-serif; /* accessible, widely supported */
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Link hover effect */
+a {
+  color: #1677ff;       /* base link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff6600;       /* changes color on hover */
+  text-decoration: underline; /* optional underline for clarity */
 }
