@@ -1,26 +1,43 @@
-/* External link icon spacing and styling */
+/* External link icon spacing */
 .external-link i {
   margin-left: 0.5em;   /* about 2 spaces worth */
-  font-size: 0.9em;     /* slightly smaller than text */
-  color: inherit;       /* matches the site’s font color */
+  font-size: 0.9em;
+  color: inherit;       /* matches site font color */
   vertical-align: middle;
 }
 
-/* Use a clean, accessible font */
+/* Accessible font for consistency */
 body, a {
-  font-family: "Arial", "Helvetica", sans-serif; /* accessible, widely supported */
+  font-family: "Arial", "Helvetica", sans-serif;
   font-size: 1em;
   line-height: 1.5;
 }
 
-/* Link hover effect */
+/* Base link styling */
 a {
-  color: #1677ff;       /* base link color */
+  color: #1677ff;
   text-decoration: none;
   transition: color 0.3s ease;
+  position: relative;   /* needed for tooltip positioning */
 }
 
 a:hover {
-  color: #ff6600;       /* changes color on hover */
-  text-decoration: underline; /* optional underline for clarity */
+  color: #ff6600;       /* hover color */
+  text-decoration: underline;
+}
+
+/* Custom tooltip styling */
+a[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #333;     /* dark grey background */
+  color: #fff;          /* white text */
+  padding: 4px 8px;
+  border-radius: 4px;
+  top: 120%;            /* below the link */
+  left: 0;
+  white-space: nowrap;
+  font-size: 0.85em;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
