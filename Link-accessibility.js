@@ -22,8 +22,8 @@
       srText.textContent = '(opens in new tab or window)';
       link.appendChild(srText);
 
-      // ✅ Give external links a tooltip too
-      link.setAttribute('data-title', 'Opens in new tab or window');
+      // ✅ Browser tooltip
+      link.setAttribute('title', 'Opens in new tab or window');
     } else {
       link.classList.add('internal-link');
       const pageTitle = url.pathname;
@@ -34,8 +34,8 @@
       srText.textContent = `(navigates to ${pageTitle})`;
       link.appendChild(srText);
 
-      // ✅ Internal links tooltip
-      link.setAttribute('data-title', `Navigates to ${pageTitle}`);
+      // ✅ Browser tooltip
+      link.setAttribute('title', `Navigates to ${pageTitle}`);
     }
   });
 })();
