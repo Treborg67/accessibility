@@ -1,10 +1,10 @@
 /* External link icon spacing */
 .external-link i {
-  margin-left: 0.5em;   /* about 2 spaces worth */
+  margin-left: 0.5em !important;   /* about 2 spaces worth */
   font-size: 0.9em;
   color: inherit;
   vertical-align: middle;
-  display: inline-block; /* ensures margin is respected */
+  display: inline-block !important; /* ensures margin is respected */
 }
 
 
